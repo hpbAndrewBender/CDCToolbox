@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CDCHelper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="557.812" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="198*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="480" Margin="7,6,0,0" VerticalAlignment="Top" Width="757" Grid.ColumnSpan="3">
+            <TabItem Header="Error Files" x:Name="StuckGP" Margin="0,0,-4,-2" Height="22" VerticalAlignment="Bottom">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="53*"/>
+                        <RowDefinition Height="95*"/>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="listBoxPO" HorizontalAlignment="Left" Height="103" Margin="10,10,0,0" VerticalAlignment="Top" Width="731" MouseDoubleClick="XMLDoubleClick"/>
+                    <ListBox x:Name="listBoxItem" HorizontalAlignment="Left" Height="103" Margin="10,118,0,0" VerticalAlignment="Top" Width="731" Grid.RowSpan="2" MouseDoubleClick="XMLDoubleClick"/>
+                    <ListBox x:Name="listBoxShip" HorizontalAlignment="Left" Height="103" Margin="10,64,0,0" VerticalAlignment="Top" Width="731" Grid.Row="1" MouseDoubleClick="XMLDoubleClick"/>
+                    <ListBox x:Name="listBoxOther" HorizontalAlignment="Left" Height="103" Margin="10,172,0,0" VerticalAlignment="Top" Width="731" Grid.Row="1" MouseDoubleClick="XMLDoubleClick"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Reopen PO" x:Name="ReOpen">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="712*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="reopenLabel" Content="Purchase Order Number:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <TextBox x:Name="reopenTextBox" HorizontalAlignment="Left" Height="23" Margin="125,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="" Grid.Column="2"/>
+                    <Button x:Name="reopenButtonSearch" Content="Search" HorizontalAlignment="Left" Margin="258,13,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSearch" Grid.Column="2"/>
+                    <Button x:Name="reopenButtonClear" Content="Clear" HorizontalAlignment="Left" Margin="346,13,0,0" VerticalAlignment="Top" Width="75" Click="ButtonClear" Grid.Column="2"/>
+                    <DataGrid x:Name="reopenGridXMLFiles" HorizontalAlignment="Left" Height="137" Margin="10,62,0,0" VerticalAlignment="Top" Width="720" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" CanUserAddRows="False" ItemsSource="{Binding}" MouseDoubleClick="XMLDoubleClick" IsReadOnly="True" Grid.ColumnSpan="3" SelectionChanged="ReopenGridXMLFiles_SelectionChanged">
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
+                    <Label x:Name="reopenLabelXMLErrorFiles" Content="XML Error files:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="10" Grid.ColumnSpan="3"/>
+                    <Label x:Name="reopenLabelDatabase" Content="Database" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.288,-1.228" FontSize="10" FontWeight="Bold" Grid.ColumnSpan="3"/>
+                    <DataGrid x:Name="reopenGridOrderHeader" HorizontalAlignment="Left" Height="44" Margin="10,232,0,0" VerticalAlignment="Top" Width="720" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True" Grid.ColumnSpan="3">
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
+                    <DataGrid x:Name="reopenGridProductMaster" HorizontalAlignment="Left" Height="133" Margin="10,281,0,0" VerticalAlignment="Top" Width="720" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True" Grid.ColumnSpan="3">
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
+
+                    <Button x:Name="reopenButtonReopen" Content="Reopen" HorizontalAlignment="Left" Margin="616,419,0,0" VerticalAlignment="Top" Width="75" Height="21" Click="ButtonReopen" Grid.Column="2"/>
+                    <CheckBox x:Name="reopenCheckBox" Content="I have validated that there are no errors" HorizontalAlignment="Left" Margin="20,419,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.ColumnSpan="3"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

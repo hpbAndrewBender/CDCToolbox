@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CDCHelper" GeneratedClassName="ProgramProperties">
+  <Profiles />
+  <Settings>
+    <Setting Name="XMLSearch" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DEV={\\wmsinterface\projects\xmlfiles}|PRD={\\wmsinterface\projects\xmlfiles}</Value>
+    </Setting>
+    <Setting Name="Production" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
