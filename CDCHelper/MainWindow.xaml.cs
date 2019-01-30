@@ -314,9 +314,10 @@ namespace CDCHelper
 				reopenTextBox.Text="";
 			}
 		}
-		private void ButtonReopen(object sender,RoutedEventArgs e)
-		{
 
+		private void ButtonResend(object sender,RoutedEventArgs e)
+		{
+			string delException = string.Empty;
 			if(IO.SQLAccess.NonQuery
 			(
 				IO.SQLAccess.dbConn[$"dips -{Globals.Env}"],
@@ -349,6 +350,20 @@ namespace CDCHelper
 				,CommandType.Text
 			))
 			{
+				try
+				{
+					foreach(Models.gridFile row in reopenGridXMLFiles.Items)
+					{
+						if(File.Exists(row.ReopenFileName))
+						{
+							File.Delete(row.ReopenFileName);
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					delException=ex.InnerException!=null ? ex.InnerException.Message : ex.Message;
+				}
 				MessageBox.Show("Successful update", "Success", MessageBoxButton.OK, MessageBoxImage.None);
 			}
 			else
