@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml;
 
-namespace CDCHelper
+namespace CDCToolbox
 {
 	/// <summary>
 	/// Interaction logic for Window1.xaml

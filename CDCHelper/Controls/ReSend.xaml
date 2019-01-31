@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CDCToolbox.Controls.ReSend"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFE5E5E5" Margin="0,0,0,8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="712*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="reopenLabel" Content="Purchase Order Number:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="reopenTextBox" HorizontalAlignment="Left" Height="23" Margin="125,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="" Grid.Column="2"/>
+        <Button x:Name="reopenButtonSearch" Content="Search" HorizontalAlignment="Left" Margin="258,13,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSearch" Grid.Column="2"/>
+        <Button x:Name="reopenButtonClear" Content="Clear" HorizontalAlignment="Left" Margin="346,13,0,0" VerticalAlignment="Top" Width="75" Click="ButtonClear" Grid.Column="2"/>
+        <DataGrid x:Name="reopenGridXMLFiles" HorizontalAlignment="Left" Height="137" Margin="10,62,0,0" VerticalAlignment="Top" Width="720" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" CanUserAddRows="False" ItemsSource="{Binding}" MouseDoubleClick="XMLDoubleClick" IsReadOnly="True" Grid.ColumnSpan="3" SelectionChanged="ReopenGridXMLFiles_SelectionChanged">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+        <Label x:Name="reopenLabelXMLErrorFiles" Content="XML Error files:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="10" Grid.ColumnSpan="3"/>
+        <Label x:Name="reopenLabelDatabase" Content="Database" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.288,-1.228" FontSize="10" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <DataGrid x:Name="reopenGridOrderHeader" HorizontalAlignment="Left" Height="44" Margin="10,232,0,0" VerticalAlignment="Top" Width="720" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True" Grid.ColumnSpan="3">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+        <DataGrid x:Name="reopenGridProductMaster" HorizontalAlignment="Left" Height="133" Margin="10,281,0,0" VerticalAlignment="Top" Width="720" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True" Grid.ColumnSpan="3">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+
+        <Button x:Name="reopenButtonReopen" Content="Resend" HorizontalAlignment="Left" Margin="616,419,0,0" VerticalAlignment="Top" Width="75" Height="21" Click="ButtonResend" Grid.Column="2"/>
+        <CheckBox x:Name="reopenCheckBox" Content="I have validated that there are no errors" HorizontalAlignment="Left" Margin="20,419,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.ColumnSpan="3"/>
+    </Grid>
+</UserControl>

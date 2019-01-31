@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3D7AEF2F-87E1-487E-BE14-3B00ED1B2B78}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CDCHelper</RootNamespace>
-    <AssemblyName>CDCHelper</AssemblyName>
+    <RootNamespace>CDCToolbox</RootNamespace>
+    <AssemblyName>CDCToolbox</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,6 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\ErrorFiles.xaml.cs">
+      <DependentUpon>ErrorFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReSend.xaml.cs">
+      <DependentUpon>ReSend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewPO.xaml.cs">
+      <DependentUpon>ViewPO.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Logic\WaitCursor.cs" />
     <Compile Include="Models\gridFile.cs" />
     <Compile Include="Models\gridOrderHeader.cs" />
@@ -62,6 +74,22 @@
     <Compile Include="TextWindow.xaml.cs">
       <DependentUpon>TextWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\ErrorFiles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ReSend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ViewPO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

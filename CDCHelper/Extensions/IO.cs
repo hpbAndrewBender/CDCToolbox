@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using CDCHelper.Logic;
+using CDCToolbox.Logic;
 
 namespace Extensions
 {
@@ -24,9 +24,9 @@ namespace Extensions
 		{
 			DataTable ordinals = null;
 
-			ordinals=CDCHelper.IO.SQLAccess.Table
+			ordinals=CDCToolbox.IO.SQLAccess.Table
 				(
-					CDCHelper.IO.SQLAccess.dbConn[$"edi  -{Globals.Env}"],
+					CDCToolbox.IO.SQLAccess.dbConn[$"edi  -{Globals.Env}"],
 					new List<string>
 					{
 						"select c.name, c.column_id",

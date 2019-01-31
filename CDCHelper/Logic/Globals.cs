@@ -1,7 +1,10 @@
-﻿using System;
+﻿using CDCToolbox;
+using System;
 using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Threading;
 
-namespace CDCHelper.Logic
+namespace CDCToolbox.Logic
 {
 	internal class Globals
 	{
@@ -44,5 +47,9 @@ namespace CDCHelper.Logic
 			"ControlNumberGroup",
 		};
 
+		public static void DoEvents()
+		{
+			Application.Current.Dispatcher.Invoke(DispatcherPriority.Background,new Action(delegate { }));
+		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿using CDCHelper.Logic;
+﻿using CDCToolbox.Logic;
 using Extensions;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
 
-namespace CDCHelper.IO
+namespace CDCToolbox.IO
 {
 	internal class SQLAccess
 	{

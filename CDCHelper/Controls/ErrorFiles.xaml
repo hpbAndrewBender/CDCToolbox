@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="CDCToolbox.Controls.ErrorFiles"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFE5E5E5" Margin="0,0,0,8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="95*"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="listBoxPO" HorizontalAlignment="Left" Height="103" Margin="10,10,0,0" VerticalAlignment="Top" Width="731" MouseDoubleClick="XMLDoubleClick"/>
+        <ListBox x:Name="listBoxItem" HorizontalAlignment="Left" Height="103" Margin="10,118,0,0" VerticalAlignment="Top" Width="731" Grid.RowSpan="2" MouseDoubleClick="XMLDoubleClick"/>
+        <ListBox x:Name="listBoxShip" HorizontalAlignment="Left" Height="103" Margin="10,64,0,0" VerticalAlignment="Top" Width="731" Grid.Row="1" MouseDoubleClick="XMLDoubleClick"/>
+        <ListBox x:Name="listBoxOther" HorizontalAlignment="Left" Height="103" Margin="10,172,0,0" VerticalAlignment="Top" Width="731" Grid.Row="1" MouseDoubleClick="XMLDoubleClick"/>
+    </Grid>
+</UserControl>
