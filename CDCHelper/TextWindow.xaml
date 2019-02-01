@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CDCToolbox"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid ShowGridLines="False">
@@ -16,14 +15,9 @@
         <TextBox Grid.Row="1" x:Name="allText" TextWrapping="Wrap" Text="TextBox" FontSize="11" FontFamily="Consolas"/>
         <Grid Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Stretch">
             <WrapPanel HorizontalAlignment="Right">
-                <Separator Width="5"></Separator>
-                <Button x:Name="ReprocessButton" Content="Reprocess" Width="75" Click="Button_Handler"></Button>
-                <Separator Width="5"></Separator>
-                <Button x:Name="CloseButton" Content="Close" Width="75" Click="Button_Handler"></Button>
-                <Separator Width="5"></Separator>
+                <Button x:Name="ReprocessButton" Content="Reprocess" Width="75" Click="Button_Handler" Margin="10,0,0,0"></Button>
+                <Button x:Name="CloseButton" Content="Close" Width="75" Click="Button_Handler" Margin="10,0,5,0"></Button>
             </WrapPanel>
         </Grid>
-        
-
     </Grid>
 </Window>
