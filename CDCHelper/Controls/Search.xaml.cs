@@ -21,13 +21,16 @@ namespace CDCToolbox.Controls
 
 		private void ButtonSearch_Click(object sender,RoutedEventArgs e)
 		{
+			int numberToSearch = 0;
 			List<string> StuckFiles = new List<string>();
 			StuckFiles.AddRange(Directory.GetFiles(@"\\wmsinterface\Projects\XMLFiles\HPBErr").ToList());
 			StuckFiles.AddRange(Directory.GetFiles(@"\\wmsinterface\Projects\XMLFiles\CDCErr").ToList());
 			StuckFiles.AddRange(Directory.GetFiles(@"\\wmsinterface\Projects\XMLFiles\ILSErrors").ToList());
+			numberToSearch=StuckFiles.Count;
 			numFiles.Text=StuckFiles.Count.ToString();
 			foreach(string file in StuckFiles.OrderBy(x => x))
 			{
+				numFiles.Text=(numberToSearch--).ToString();
 				dirName.Text=Path.GetDirectoryName(file);
 				fileName.Text=Path.GetFileName(file);
 				Globals.DoEvents();
@@ -36,6 +39,8 @@ namespace CDCToolbox.Controls
 					this.listBoxFound.Items.Add(file);
 				}
 			}
+			numFiles.Text="0";
+			Globals.DoEvents();
 		}
 
 		private void XMLDoubleClick(object sender,MouseButtonEventArgs e)

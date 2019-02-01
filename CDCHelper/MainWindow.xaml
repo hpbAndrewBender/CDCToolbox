@@ -25,7 +25,7 @@
             <TabItem Header="Resend PO" x:Name="ReOpen" Background="Bisque">
                 <Control:ReSend></Control:ReSend>
             </TabItem>
-            <TabItem Header="Settings" Background="Black" Foreground="White">
+            <TabItem Header="Settings" Background="LightGray">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
