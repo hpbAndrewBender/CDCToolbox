@@ -46,7 +46,8 @@ namespace CDCToolbox
 				{
 					this.errorText.Text=temp.Substring(temp.IndexOf("<error>")+"<error>".Length,temp.IndexOf("</error>")-temp.IndexOf("<error>")-"<error>".Length).ToUpper();
 				}
-				this.allText.Text=alltext.Replace("&gt;",">").Replace("&lt;","<");
+				//--this.allText.Text=alltext.Replace("&gt;",">").Replace("&lt;","<");
+				editor.Load(FileName);
 			}
 		}
 

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid ShowGridLines="False">
@@ -12,7 +13,8 @@
             <RowDefinition Height="25"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBox Grid.Row="0" x:Name="errorText" TextWrapping="Wrap" Text="TextBox" Background="White" FontWeight="Bold" FontSize="11"/>
-        <TextBox Grid.Row="1" x:Name="allText" TextWrapping="Wrap" Text="TextBox" FontSize="11" FontFamily="Consolas"/>
+        <!--<TextBox Grid.Row="1" x:Name="allText" TextWrapping="Wrap" Text="TextBox" FontSize="11" FontFamily="Consolas"/>-->
+        <avalonEdit:TextEditor Name="editor" Grid.Row="1" FontFamily="Consolas" SyntaxHighlighting="XML" FontSize="9pt"/>
         <Grid Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Stretch">
             <WrapPanel HorizontalAlignment="Right">
                 <Button x:Name="ReprocessButton" Content="Reprocess" Width="75" Click="Button_Handler" Margin="10,0,0,0"></Button>
