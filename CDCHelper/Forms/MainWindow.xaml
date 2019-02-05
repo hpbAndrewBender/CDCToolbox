@@ -16,8 +16,11 @@
             <TabItem Header="Error Files" x:Name="StuckGP" Height="22" VerticalAlignment="Bottom" Background="LightBlue">
                 <Control:ErrorFiles></Control:ErrorFiles>
             </TabItem>
-            <TabItem Header="Search" x:Name="SearchStuck" Height="22" VerticalAlignment="Bottom" Background="LightBlue">
+            <TabItem Header="Error Search " x:Name="SearchStuck" Height="22" VerticalAlignment="Bottom" Background="LightBlue">
                 <Control:Search></Control:Search>
+            </TabItem>
+            <TabItem Header="Inprocess Search " x:Name="SearchInprocess" Height="22" VerticalAlignment="Bottom" Background="Bisque">
+                <Control:SearchIP></Control:SearchIP>
             </TabItem>
             <TabItem Header="View PO" x:Name="View" Background="Bisque">
                 <Control:ViewPO></Control:ViewPO>

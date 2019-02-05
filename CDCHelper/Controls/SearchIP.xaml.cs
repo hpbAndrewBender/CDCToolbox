@@ -12,9 +12,9 @@ namespace CDCToolbox.Controls
 	/// <summary>
 	/// Interaction logic for Search.xaml
 	/// </summary>
-	public partial class Search : UserControl
+	public partial class SearchIP : UserControl
 	{
-		public Search()
+		public SearchIP()
 		{
 			InitializeComponent();
 		}
@@ -22,13 +22,11 @@ namespace CDCToolbox.Controls
 		private void ButtonSearch_Click(object sender,RoutedEventArgs e)
 		{
 			int numberToSearch = 0;
-			List<string> StuckFiles = new List<string>();
-			StuckFiles.AddRange(Directory.GetFiles(@"\\wmsinterface\Projects\XMLFiles\HPBErr").ToList());
-			StuckFiles.AddRange(Directory.GetFiles(@"\\wmsinterface\Projects\XMLFiles\CDCErr").ToList());
-			StuckFiles.AddRange(Directory.GetFiles(@"\\wmsinterface\Projects\XMLFiles\ILSErrors").ToList());
-			numberToSearch=StuckFiles.Count;
-			numFiles.Text=StuckFiles.Count.ToString();
-			foreach(string file in StuckFiles.OrderBy(x => x))
+			List<string> InprocessSearch = new List<string>();
+			InprocessSearch.AddRange(Directory.GetFiles(@"\\wmsinterface\Projects\XMLFiles\CDCOutput\inprocess").ToList());
+			numberToSearch=InprocessSearch.Count;
+			numFiles.Text=InprocessSearch.Count.ToString();
+			foreach(string file in InprocessSearch.OrderBy(x => x))
 			{
 				numFiles.Text=(numberToSearch--).ToString();
 				dirName.Text=Path.GetDirectoryName(file);
@@ -76,6 +74,22 @@ namespace CDCToolbox.Controls
 			numFiles.Text=string.Empty;
 			dirName.Text=string.Empty;
 			fileName.Text=string.Empty;
+		}
+
+		private void MenuItem_Click_Edit(object sender,RoutedEventArgs e)
+		{
+			Editor te = new Editor(listBoxFound.SelectedItem.ToString());
+			te.Show();
+		}
+
+		private void MenuItem_Click_Delete(object sender,RoutedEventArgs e)
+		{
+
+		}
+
+		private void MenuItem_Click_Reprocess(object sender,RoutedEventArgs e)
+		{
+
 		}
 	}
 }

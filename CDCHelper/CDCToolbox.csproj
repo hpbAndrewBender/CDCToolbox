@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.5.0.4\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -61,17 +64,23 @@
     <Compile Include="Controls\ReSend.xaml.cs">
       <DependentUpon>ReSend.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SearchIP.xaml.cs">
+      <DependentUpon>SearchIP.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ViewPO.xaml.cs">
       <DependentUpon>ViewPO.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Editor.xaml.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Logic\WaitCursor.cs" />
     <Compile Include="Models\gridFile.cs" />
     <Compile Include="Models\gridOrderHeader.cs" />
     <Compile Include="Models\gridProductMaster.cs" />
-    <Compile Include="TextWindow.xaml.cs">
+    <Compile Include="Forms\TextWindow.xaml.cs">
       <DependentUpon>TextWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\ErrorFiles.xaml">
@@ -82,6 +91,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\SearchIP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\Search.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,7 +103,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Forms\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -106,11 +119,15 @@
     <Compile Include="Extensions\Reflections.cs" />
     <Compile Include="IO\SQLAccess.cs" />
     <Compile Include="Logic\Globals.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Forms\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TextWindow.xaml">
+    <Page Include="Forms\Editor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\TextWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,6 +155,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="ProgramProperties.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>ProgramProperties.Designer.cs</LastGenOutput>

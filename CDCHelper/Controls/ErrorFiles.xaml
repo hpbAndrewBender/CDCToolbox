@@ -7,12 +7,58 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="#FFE5E5E5" Margin="0,0,0,8">
         <Grid.RowDefinitions>
-            <RowDefinition Height="53*"/>
-            <RowDefinition Height="95*"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="listBoxPO" HorizontalAlignment="Left" Height="103" Margin="10,10,0,0" VerticalAlignment="Top" Width="731" MouseDoubleClick="XMLDoubleClick"/>
-        <ListBox x:Name="listBoxItem" HorizontalAlignment="Left" Height="103" Margin="10,118,0,0" VerticalAlignment="Top" Width="731" Grid.RowSpan="2" MouseDoubleClick="XMLDoubleClick"/>
-        <ListBox x:Name="listBoxShip" HorizontalAlignment="Left" Height="103" Margin="10,64,0,0" VerticalAlignment="Top" Width="731" Grid.Row="1" MouseDoubleClick="XMLDoubleClick"/>
-        <ListBox x:Name="listBoxOther" HorizontalAlignment="Left" Height="103" Margin="10,172,0,0" VerticalAlignment="Top" Width="731" Grid.Row="1" MouseDoubleClick="XMLDoubleClick"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="PO Errors" VerticalAlignment="Center">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="270"></RotateTransform>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+            <ListBox Grid.Column="1" x:Name="listBoxPO" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="731" MouseDoubleClick="XMLDoubleClick"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Item Errors" VerticalAlignment="Center">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="270"></RotateTransform>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+            <ListBox Grid.Column="2" x:Name="listBoxItem" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="731" MouseDoubleClick="XMLDoubleClick"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="ILS Errors" VerticalAlignment="Center">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="270"></RotateTransform>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+            <ListBox Grid.Column="2" x:Name="listBoxShip" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="731" MouseDoubleClick="XMLDoubleClick"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Other Errors" VerticalAlignment="Center">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="270"></RotateTransform>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+            <ListBox Grid.Column="2" x:Name="listBoxOther" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="731" MouseDoubleClick="XMLDoubleClick"/>
+        </Grid>
     </Grid>
 </UserControl>
