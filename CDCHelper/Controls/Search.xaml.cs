@@ -34,7 +34,7 @@ namespace CDCToolbox.Controls
 				dirName.Text=Path.GetDirectoryName(file);
 				fileName.Text=Path.GetFileName(file);
 				Globals.DoEvents();
-				if(File.ReadAllText(file).ToUpper().Contains(searchText.Text.ToUpper()))
+				if(File.ReadAllText(file).ToUpper().Contains(searchText.Text.Trim().ToUpper()))
 				{
 					this.listBoxFound.Items.Add(file);
 				}
